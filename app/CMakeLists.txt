@@ -1,9 +1,8 @@
 cmake_minimum_required(VERSION 3.4.1)
 
 set(CMAKE_CXX_FLAGS -std=c++11)
-
 link_directories(${PROJECT_SOURCE_DIR}/../openCVLibrary320/native/libs/${ANDROID_ABI} ${PROJECT_SOURCE_DIR}/../openCVLibrary320/native/3rdparty/libs/${ANDROID_ABI})
-include_directories(${PROJECT_SOURCE_DIR}/../openCVLibrary320/native/jni/include)
+include_directories(${ANDROID_NDK}/sysroot/usr/include/arm-linux-androideabi ${PROJECT_SOURCE_DIR}/../openCVLibrary320/native/jni/include)
 
 add_library(native-vision SHARED src/cpp/vision.cpp src/cpp/vision.c)
 
